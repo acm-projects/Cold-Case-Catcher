@@ -38,7 +38,7 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 	- [Supermemo](https://github.com/maxvien/supermemo#readme)
 	- [JS Library](https://www.npmjs.com/package/lt-spaced-repetition-js)
 - Web Scraper 
-	- [python](https://www.python.org/)
+	- [[Google Custom Search API](https://developers.google.com/custom-search/v1/introduction)
 - Database:
 	- [Firebase](https://firebase.google.com/docs)
 - Login/Authentication
@@ -53,7 +53,7 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 	- Uses [Dart](https://dart.dev/) as a language
 	- Has LOTS of [documentation](https://flutter.dev/docs)
 - Web Scraper 
-	- [python](https://www.python.org/)
+	- [Google Custom Search API](https://developers.google.com/custom-search/v1/introduction)
 - Database:
 	- [Firebase](https://firebase.google.com/docs)
 - Login/Authentication
