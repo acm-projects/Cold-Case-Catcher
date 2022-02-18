@@ -67,3 +67,6 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 - https://www.pexels.com/
 - https://commons.wikimedia.org/wiki/Category:Images
 - https://unsplash.com/images/stock
+
+# [Gitbash](https://gitforwindows.org/)
+  * A very useful [Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf) of commands you will use
