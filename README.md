@@ -34,9 +34,6 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 	- [Node.js](https://nodejs.org/en/)
 		- Easily integratable with Vue and React 
 		- Firebase and Node.js integrate with one another rather easily
-- Libraries
-	- [Supermemo](https://github.com/maxvien/supermemo#readme)
-	- [JS Library](https://www.npmjs.com/package/lt-spaced-repetition-js)
 - Web Scraper 
 	- [[Google Custom Search API](https://developers.google.com/custom-search/v1/introduction)
 - Database:
