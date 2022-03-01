@@ -25,9 +25,8 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 	- [Figma](https://www.figma.com/)
 - Frontend
 	- [React]( https://reactjs.org/)
-		- Widely used
-	- [Vue](https://vuejs.org/)
-		- Easier to pick up than React,but less popular
+	Tutorials:
+	https://yonedesign.medium.com/react-b5a619dc6532
 - [FBI Crime API](https://crime-data-explorer.fr.cloud.gov/)
 	- Will be used to extract information
 - Backend
