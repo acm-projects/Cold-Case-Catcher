@@ -26,7 +26,8 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 - Frontend
 	- [React]( https://reactjs.org/)
 	Tutorials:
-	https://yonedesign.medium.com/react-b5a619dc6532
+		- https://yonedesign.medium.com/react-b5a619dc6532
+		- https://reactjs.org/docs/hello-world.html
 - [FBI Crime API](https://crime-data-explorer.fr.cloud.gov/)
 	- Will be used to extract information
 - Backend
