@@ -1,0 +1,3 @@
+function amogus() {
+    alert("Amogus");
+}
