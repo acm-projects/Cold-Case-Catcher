@@ -1,7 +1,12 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import { db } from './firebase';
+import React, { useState, useEffect } from 'react';
+import { db, signInWithGoogle, signOutOut } from "./firebase";
 import { collection, doc, getDocs, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
+import { Signup } from "./components/Signup"
+import { Login } from "./components/Login"
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from "./components/AuthContext"
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 
 function App() {
@@ -51,10 +56,37 @@ function App() {
   // to pass arguments to function called with onClick it needs to be in an
   // arrow function first, else you dont such as with createUser
 
+  //disabled sign in with google button:
+  /*html code to create a disabled "Sign in with Google" button
+    <button type="button" class="login-with-google-btn" disabled>
+    Sign in with Google
+    </button>
+  */
+
   return (
     // we create input fields that concurrently update the state variables
     // we have a button to post our most recent states to our database
     <div className="App">
+      <button onClick={signInWithGoogle} type="button" className="login-with-google-btn" >
+      Sign in with Google
+      </button>
+
+      <button onClick={signOutOut} type="button">
+      Sign out
+      </button>
+
+      <AuthProvider>
+        <Container className="d-flex allign-items-center justify-content-center"
+          style={{ minHeight: '100vh' }}>
+          <div className='w-100' style = {{ maxWidth: '400px' }}>
+            <Signup />
+            <Login />
+          </div>
+        </Container>
+      </AuthProvider>
+      
+      
+      
       <h1>Hello</h1>
 
       <div>
@@ -63,7 +95,6 @@ function App() {
         <input type="text" placeholder='story' onChange={(e) => { setStory(e.target.value) }}></input>
         <button onClick={createUser}>Create Story</button>
       </div>
-
 
       {cases.map((newCase) => {
         return (
