@@ -25,18 +25,15 @@ Thousands of criminal cases go unsolved every year, with many not getting enough
 	- [Figma](https://www.figma.com/)
 - Frontend
 	- [React]( https://reactjs.org/)
-		- Widely used
-	- [Vue](https://vuejs.org/)
-		- Easier to pick up than React,but less popular
+	Tutorials:
+		- https://yonedesign.medium.com/react-b5a619dc6532
+		- https://reactjs.org/docs/hello-world.html
 - [FBI Crime API](https://crime-data-explorer.fr.cloud.gov/)
 	- Will be used to extract information
 - Backend
 	- [Node.js](https://nodejs.org/en/)
 		- Easily integratable with Vue and React 
 		- Firebase and Node.js integrate with one another rather easily
-- Libraries
-	- [Supermemo](https://github.com/maxvien/supermemo#readme)
-	- [JS Library](https://www.npmjs.com/package/lt-spaced-repetition-js)
 - Web Scraper 
 	- [[Google Custom Search API](https://developers.google.com/custom-search/v1/introduction)
 - Database:

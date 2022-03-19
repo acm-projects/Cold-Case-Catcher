@@ -9,6 +9,8 @@ import { AuthProvider } from "./components/AuthContext"
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 
+//import {manslaughter} from './data/manslaughter.js'
+//import {murder} from './data/murder'
 function App() {
 
   // State variables
@@ -16,7 +18,6 @@ function App() {
   const [newTitle, setTitle] = useState("")
   const [newDate, setDate] = useState("")
   const [newStory, setStory] = useState("")
-
   // Collection reference
   const casesCollectionRef = collection(db, "cases") // establish connection to db & collection
 
@@ -30,6 +31,10 @@ function App() {
   // & we need the new document to be posted.
   const createUser = async () => {
     await addDoc(casesCollectionRef, { date: newDate, story: newStory, title: newTitle })
+
+  }
+  const addCase = async (theCase) => {
+    await addDoc(casesCollectionRef, theCase)
 
   }
 
@@ -51,6 +56,7 @@ function App() {
   // Called eachtime page is rendered
   useEffect(() => {
     getCases()
+    
   }, [])
 
   // to pass arguments to function called with onClick it needs to be in an
@@ -104,6 +110,7 @@ function App() {
             <h1>Date: {newCase.date}</h1>
             <button onClick={() => { updateDate(newCase.id, newCase.date) }}>Adjust date</button>
             <button onClick={() => { deleteUser(newCase.id) }}>Delete data </button>
+
           </div>
         )
       })}
