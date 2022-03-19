@@ -7,10 +7,9 @@ import { Login } from "./components/Login"
 import { Container } from 'react-bootstrap';
 import { AuthProvider } from "./components/AuthContext"
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-
-
 //import {manslaughter} from './data/manslaughter.js'
 //import {murder} from './data/murder'
+
 function App() {
 
   // State variables
@@ -90,8 +89,6 @@ function App() {
           </div>
         </Container>
       </AuthProvider>
-      
-      
       
       <h1>Hello</h1>
 
