@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { db, signInWithGoogle, signOutOut } from "./firebase";
 import { collection, doc, getDocs, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
+<<<<<<< HEAD
 import { Signup } from "./components/Signup"
 import { Login } from "./components/Login"
 import { Container } from 'react-bootstrap';
@@ -9,6 +10,16 @@ import { AuthProvider } from "./components/AuthContext"
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 //import {manslaughter} from './data/manslaughter.js'
 //import {murder} from './data/murder'
+=======
+//import {manslaughter} from './data/manslaughter.js'
+//import {murder} from './data/murder'
+import { Signup } from "./components/Signup"
+import { Login } from "./components/Login"
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from "./components/AuthContext"
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+>>>>>>> 8fdcf50d9dfe6151e823abf3802190d943459fde
 
 function App() {
 
@@ -90,6 +101,11 @@ function App() {
         </Container>
       </AuthProvider>
       
+<<<<<<< HEAD
+=======
+      
+      
+>>>>>>> 8fdcf50d9dfe6151e823abf3802190d943459fde
       <h1>Hello</h1>
 
       <div>
