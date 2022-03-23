@@ -1,4 +1,5 @@
 import './App.css';
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { db, signInWithGoogle, signOutOut } from "./firebase";
 import { collection, doc, getDocs, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
@@ -10,56 +11,16 @@ import { AuthProvider } from "./components/AuthContext"
 //import {manslaughter} from './data/manslaughter.js'
 //import {murder} from './data/murder'
 
+=======
+import { useState, useEffect } from 'react';
+import { db } from './firebase';
+import { collection, doc, query, where, getDocs,  addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
+//import {manslaughter} from './data/manslaughter.js'
+//import {murder} from './data/murder'
+import Toggler from './components/Toggler';
+>>>>>>> 5fe54008671f1084ce8a75782e5fa153f7185d52
 function App() {
 
-  // State variables
-  const [cases, setCases] = useState([])
-  const [newTitle, setTitle] = useState("")
-  const [newDate, setDate] = useState("")
-  const [newStory, setStory] = useState("")
-  // Collection reference
-  const casesCollectionRef = collection(db, "cases") // establish connection to db & collection
-
-  // Retrieves cases with getDocs & our collection reference
-  const getCases = async () => {
-    const data = await getDocs(casesCollectionRef)
-    setCases(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-  }
-
-  // Creating a user involves adjusting the entire collection so we need the collection reference
-  // & we need the new document to be posted.
-  const createUser = async () => {
-    await addDoc(casesCollectionRef, { date: newDate, story: newStory, title: newTitle })
-
-  }
-  const addCase = async (theCase) => {
-    await addDoc(casesCollectionRef, theCase)
-
-  }
-
-  // References the doc with that case id and deletes it with deleteDoc
-  const deleteUser = async (id) => {
-    const userDoc = doc(db, "cases", id)
-    await deleteDoc(userDoc)
-  }
-
-  // Updates data with doc id & the fields you want to be updated with the updateDoc method
-  const updateDate = async (id, date) => {
-    // We need to update a specific doc so we need to 
-    // grab that doc from our DB, its collection, & filtered with the 'id' var
-    const userDoc = doc(db, "cases", id)
-    const newFields = { date: "updated date" }
-    updateDoc(userDoc, newFields)
-  }
-
-  // Called eachtime page is rendered
-  useEffect(() => {
-    getCases()
-    
-  }, [])
-
-  // to pass arguments to function called with onClick it needs to be in an
-  // arrow function first, else you dont such as with createUser
 
   //disabled sign in with google button:
   /*html code to create a disabled "Sign in with Google" button
@@ -91,6 +52,7 @@ function App() {
       </AuthProvider>
       
       <h1>Hello</h1>
+<<<<<<< HEAD
 
       <div>
         <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }}></input>
@@ -112,6 +74,9 @@ function App() {
         )
       })}
 
+=======
+      <Toggler/>
+>>>>>>> 5fe54008671f1084ce8a75782e5fa153f7185d52
     </div>
   );
 }
