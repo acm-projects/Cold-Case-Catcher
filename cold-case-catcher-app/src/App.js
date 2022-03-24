@@ -85,7 +85,7 @@ function App() {
       <button onClick={signOutOut} type="button">
       Sign out
       </button>
-
+      
       <AuthProvider>
         <Container className="d-flex allign-items-center justify-content-center"
           style={{ minHeight: '100vh' }}>
@@ -98,13 +98,13 @@ function App() {
       
       <h1>Hello</h1>
 
-      <div>
+      {/* <div>
         <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }}></input>
         <input type="text" placeholder='date' onChange={(e) => { setDate(e.target.value) }}></input>
         <input type="text" placeholder='story' onChange={(e) => { setStory(e.target.value) }}></input>
         <button onClick={createUser}>Create Story</button>
-      </div>
-
+      </div> */}
+      <Toggler/>
       {cases.map((newCase) => {
         return (
           <div>
