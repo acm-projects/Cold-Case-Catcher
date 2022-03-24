@@ -1,9 +1,16 @@
 import './App.css';
-import { useState, useEffect } from 'react';
-import { db } from './firebase';
-import { collection, doc, query, where, getDocs,  addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
+import React, { useState, useEffect } from 'react';
+import { db, signInWithGoogle, signOutOut } from "./firebase";
+import { collection, doc, query, where, getDocs, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
+import { Signup } from "./components/Signup"
+import { Login } from "./components/Login"
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from "./components/AuthContext"
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 //import {manslaughter} from './data/manslaughter.js'
 //import {murder} from './data/murder'
+import Toggler from './components/Toggler';
+
 function App() {
 
   // State variables
@@ -11,21 +18,12 @@ function App() {
   const [newTitle, setTitle] = useState("")
   const [newDate, setDate] = useState("")
   const [newStory, setStory] = useState("")
-  // Toggler States
-  const [mansLState, setManslState] = useState(false)
-  const [hitRunState, setHitRunState] = useState(false)
-  const [rmState, setRMState] = useState(false)
-  const [murderState, setMState] = useState(false)
-  const [mpState, setMPState] = useState(false)
-  const [sdState, setSDState] = useState(false)
-
   // Collection reference
   const casesCollectionRef = collection(db, "cases") // establish connection to db & collection
 
   // Retrieves cases with getDocs & our collection reference
-  const getCases = async (crime = "Hit and Run") => {
-    const q = query(casesCollectionRef, where("Offense","==",`${crime}`))
-    const data = await getDocs(q)
+  const getCases = async () => {
+    const data = await getDocs(casesCollectionRef)
     setCases(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   }
 
@@ -35,7 +33,6 @@ function App() {
     await addDoc(casesCollectionRef, { date: newDate, story: newStory, title: newTitle })
 
   }
-  // pass object and it adds to the referred database collection
   const addCase = async (theCase) => {
     await addDoc(casesCollectionRef, theCase)
 
@@ -57,79 +54,63 @@ function App() {
   }
 
   // Called eachtime page is rendered
-  useEffect(() => {
-    //getCases("Suspicious Death")
+  /*useEffect(() => {
+    getCases()
     
-  }, [])
+  }, [])*/
 
   // to pass arguments to function called with onClick it needs to be in an
   // arrow function first, else you dont such as with createUser
-  const dispCases = async (crime) =>{
-    const q = query(casesCollectionRef, where("Offense","==",`${crime}`))
-    const data = await getDocs(q)
-    let returnedCases = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-    setCases( [...cases, ...returnedCases])
-    console.log(cases)
-  }
-  const filterCases = async(crime) =>{
-    setCases(cases.filter((theCase)=>theCase['Offense'] !== crime))
-  }
+
+  //disabled sign in with google button:
+  /*html code to create a disabled "Sign in with Google" button
+    <button type="button" class="login-with-google-btn" disabled>
+    Sign in with Google
+    </button>
+  */
 
   return (
     // we create input fields that concurrently update the state variables
     // we have a button to post our most recent states to our database
     <div className="App">
+      <div>
+        <script async src="https://cse.google.com/cse.js?cx=f2e21ac773fc5ae60"></script>
+        <div class="gcse-search"></div>
+      </div>
+
+      <button onClick={signInWithGoogle} type="button" className="login-with-google-btn" >
+      Sign in with Google
+      </button>
+
+      <button onClick={signOutOut} type="button">
+      Sign out
+      </button>
+
+      <AuthProvider>
+        <Container className="d-flex allign-items-center justify-content-center"
+          style={{ minHeight: '100vh' }}>
+          <div className='w-100' style = {{ maxWidth: '400px' }}>
+            <Signup />
+            <Login />
+          </div>
+        </Container>
+      </AuthProvider>
+      
       <h1>Hello</h1>
 
       <div>
-        {/* <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }}></input>
+        <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }}></input>
         <input type="text" placeholder='date' onChange={(e) => { setDate(e.target.value) }}></input>
         <input type="text" placeholder='story' onChange={(e) => { setStory(e.target.value) }}></input>
-        <button onClick={createUser}>Create Story</button> */}
-        <button onClick={()=> {
-          if(mansLState === false){ setManslState(true); dispCases("Manslaughter/ Non-Negligent")}
-          else { setManslState(false); filterCases("Manslaughter/ Non-Negligent")}
-        }}> Manslaughter </button>
-
-        <button onClick={()=> {
-          if(hitRunState === false){
-            setHitRunState(true)
-            dispCases("Hit and Run")
-          }
-          else{
-            setHitRunState(false)
-            filterCases("Hit and Run")
-          }
-        }}>Hit & Run</button>
-
-        <button onClick={()=> {
-          if(rmState === false){ setRMState(true); dispCases("Rape/Murder")}
-          else { setRMState(false); filterCases("Rape/Murder")}
-        }}>Rape & Murder</button>
-
-        <button onClick={()=> {
-          if(mpState === false){ setMPState(true); dispCases("Missing Person (Presumed Murdered)")}
-          else { setMPState(false); filterCases("Missing Person (Presumed Murdered)")}
-        }}>Missing Person</button>
-
-        <button onClick={()=> {
-          if(sdState === false){ setSDState(true); dispCases("Suspicious Death")}
-          else { setSDState(false); filterCases("Suspicious Death")}
-        }}>Suspicious Death </button>
-
-        <button onClick={()=> {
-          if(murderState === false){ setMState(true); dispCases("Murder")}
-          else { setMState(false); filterCases("Murder")}
-        }}>Murder</button>
+        <button onClick={createUser}>Create Story</button>
       </div>
-
 
       {cases.map((newCase) => {
         return (
           <div>
-            <h1>Name: {newCase['Name']}</h1>
-            <h1>Story: {newCase['Offense']}</h1>
-            <h1>Date: {newCase['Incident Location']}</h1>
+            <h1>Name: {newCase.title}</h1>
+            <h1>Story: {newCase.story}</h1>
+            <h1>Date: {newCase.date}</h1>
             <button onClick={() => { updateDate(newCase.id, newCase.date) }}>Adjust date</button>
             <button onClick={() => { deleteUser(newCase.id) }}>Delete data </button>
 
