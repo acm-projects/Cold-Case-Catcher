@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function PrimaryButton({name}) {
+function SecondaryButton({name}) {
   return (
     <ButtonStyled>
         {name}
@@ -19,12 +19,12 @@ const ButtonStyled = styled.button`
         --white: rgb(255, 255, 255);
         --altblue: rgb(115,180,235);
     }
-  
-  background-color: var(--altblue);
+
+  background-color: var(--white);
   padding: 0.75rem 0.75rem;
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   border-radius: 10px;
 `;
 
-export default PrimaryButton
+export default SecondaryButton

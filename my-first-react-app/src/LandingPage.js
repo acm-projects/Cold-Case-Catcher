@@ -9,20 +9,32 @@ import Navigation from './components/Navigation';
 import TopCase from './components/TopCase';
 import Purpose from './components/Purpose';
 import Options from './components/Options';
-import LandingPage from './LandingPage';
-import Login from './Login';
+import styled from 'styled-components'
+import { Link } from 'react-router-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <hr></hr><br />
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function LandingPage() {
+  return (
+  <LandingPageStyled>
+    <NavigationLayout>
+      <Navigation />
+    </NavigationLayout>
 
+    <InnerLayout>
+      <Header />
+      <Purpose />
+    </InnerLayout>
 
+    <TopCase />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <OuterLayout>
+      <Options />
+      <GlobalStyle />
+    </OuterLayout>
+  </LandingPageStyled>
+  )
+}
+
+const LandingPageStyled = styled.div`
+`;
+
+export default LandingPage

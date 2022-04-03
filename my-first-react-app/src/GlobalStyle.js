@@ -9,7 +9,7 @@ const globalStyle = createGlobalStyle`
         --gray: rgb(206, 214, 219);
         --red: rgb(255, 0, 0);
         --white: rgb(255, 255, 255);
-        --altblue: rgb(161, 194, 215);
+        --altblue: rgb(115,180,235);
     }
 
     *{
@@ -21,8 +21,9 @@ const globalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
-    body{
-        background-image: url(${bg});
+    body {
+        background: url(${bg}) no-repeat center fixed;
+        background-size: cover;
     }
 
     a {
@@ -30,6 +31,7 @@ const globalStyle = createGlobalStyle`
         color: var(--blue);
         font-size: 20px;
     }
+
 `; 
 
 export default globalStyle;

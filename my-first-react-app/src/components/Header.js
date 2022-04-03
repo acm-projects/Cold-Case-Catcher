@@ -1,35 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
-import bg from '../img/Homepagebg.svg'
+import picture from '../img/Rectangle42.svg'
 import Navigation from './Navigation'
+import Purpose from './Purpose'
+import TopCase from './TopCase'
 
 function Header() {
   return (
     <HeaderStyled>
-        <div className='nav'>
-            <Navigation />
-        </div>
+        <ul className='text-image'>  
+            <div className='text-field'>
+                <h1> Countless criminal cases go unsolved every year.</h1>
+                <br /><br />
+                <h6 className='subtext'> Get involved and help us find vital information to solve thousands of cold cases nationwide. </h6>
+            </div>
+
+            <img className='pict' src={picture}/>
+        </ul>
 
         <div className='header-content'>
+            <br /><br /><br />
             <h1> Cold Case Catcher </h1>
-        </div>
-
-        <div className='about-us'>
-                <h4>SO, WHO ARE WE?</h4>
-                <p></p>
-                <h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat...</h6>
-                <p></p>
-
-                <hr></hr>
-
-                <p></p>
-                <h4>OUR PURPOSE</h4>
-                <p></p>
-                <h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat...</h6>
-        </div>
-
-        <div>
-            Test
+            <hr></hr>
+            <br /><br /><br /><br />
         </div>
 
     </HeaderStyled>
@@ -37,38 +30,58 @@ function Header() {
 }
 
 const HeaderStyled = styled.header`
-    height: 100vh;
+    :root {
+        --blue: rgb(005, 060, 94);
+        --brown: rgb(100, 048, 071);
+        --black: rgb(0, 0, 0);
+        --gray: rgb(206, 214, 219);
+        --red: rgb(255, 0, 0);
+        --white: rgb(255, 255, 255);
+        --altblue: rgb(115,180,235);
+    }
+
+    height: 100%;
     width: 100%;
     color: white;
-    background-image: url(${bg});
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 2rem 5rem;
+
+    .nav {
+        padding: 0.5rem 2rem;
+    }
+
+    .text-image {
+        display: flex;
+        justify-content: space-between;
+        margin: 5rem 0rem;
+        padding: 0.5rem 5rem;
+
+        .text-field {
+            height: auto;
+            width: 33%;
+            border-radius: 10px;
+            font-family: 'Lato', sans-serif;
+            font-style: light;
+            font-size: 24px;
+            border-radius: 10px;
+            padding: 5rem 1rem;
+        }
+
+        .subtext {
+            color: var(--altblue);
+        }
+    }
+
+    .pict {
+        padding: 0.5rem 2rem;
+        width: 62%;
+        height: auto;
+        image-size: 50% 50%;
+    }
 
     .header-content {
-        padding 15rem 0rem;
+        padding: 0.5rem 2rem;
         font-size: 30px;
     }
 
-    .about-us {
-        background-color: rgba(206, 214, 219, .2);
-        color: #fff;
-        font-family: 'Lato', sans-serif;
-        font-size: 20px;
-        border-radius: 10px;
-        padding: 1rem;
-    }
-
-    .hr {
-        width: 60%; 
-        margin-left: auto; 
-        margin-right: auto;
-        line-space: 6px;
-    }
-
-    p {
-        margin: 7px;
-    }
 `;
 
 export default Header

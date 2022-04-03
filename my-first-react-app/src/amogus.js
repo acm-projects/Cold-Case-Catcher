@@ -1,3 +1,0 @@
-function amogus() {
-    alert("Amogus");
-}
