@@ -10,6 +10,8 @@ import { AuthProvider } from "./components/AuthContext"
 //import {manslaughter} from './data/manslaughter.js'
 //import {murder} from './data/murder'
 import Toggler from './components/Toggler';
+import Webscraper from './components/Webscraper';
+import NotebookPackage from './components/NotebookPackage';
 
 function App() {
 
@@ -54,10 +56,9 @@ function App() {
   }
 
   // Called eachtime page is rendered
-  /*useEffect(() => {
-    getCases()
-    
-  }, [])*/
+  useEffect(() => {
+    //getCases()
+  }, [])
 
   // to pass arguments to function called with onClick it needs to be in an
   // arrow function first, else you dont such as with createUser
@@ -73,10 +74,6 @@ function App() {
     // we create input fields that concurrently update the state variables
     // we have a button to post our most recent states to our database
     <div className="App">
-      <div>
-        <script async src="https://cse.google.com/cse.js?cx=f2e21ac773fc5ae60"></script>
-        <div class="gcse-search"></div>
-      </div>
 
       <button onClick={signInWithGoogle} type="button" className="login-with-google-btn" >
       Sign in with Google
@@ -96,7 +93,12 @@ function App() {
         </Container>
       </AuthProvider>
       
+
       <h1>Hello</h1>
+
+      <Webscraper/>
+
+      <NotebookPackage/>
 
       {/* <div>
         <input type="text" placeholder='title' onChange={(e) => { setTitle(e.target.value) }}></input>
