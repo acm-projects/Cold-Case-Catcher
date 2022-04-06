@@ -7,10 +7,11 @@ import { Login } from "./components/Login"
 import { Container } from 'react-bootstrap';
 import { AuthProvider } from "./components/AuthContext"
 //import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-//import {manslaughter} from './data/manslaughter.js'
-//import {murder} from './data/murder'
+import {manslaughter} from './data/manslaughter.js'
+import {susD} from './data/susDeath.js'
+import { missP } from './data/missPerson';
 import Toggler from './components/Toggler';
-
+import Search from './components/Search';
 function App() {
 
   // State variables
@@ -18,6 +19,8 @@ function App() {
   const [newTitle, setTitle] = useState("")
   const [newDate, setDate] = useState("")
   const [newStory, setStory] = useState("")
+  const [tempCases, setTempCases] = useState([])
+
   // Collection reference
   const casesCollectionRef = collection(db, "cases") // establish connection to db & collection
 
@@ -53,11 +56,33 @@ function App() {
     updateDoc(userDoc, newFields)
   }
 
+  // Method to filter posts
+  const filterPosts = (tempCases, query) => {
+    if (!query) {
+        return tempCases;
+    }
+    // Filter cases that have the right name
+    return tempCases.filter((tempCase) => {
+        const postName = tempCase['Name'].toLowerCase();
+        return postName.includes(query) || tempCase['Name'].includes(query);
+    });
+};
+
+
+const { search } = window.location;
+const query = new URLSearchParams(search).get('s');
+const [searchQuery, setSearchQuery] = useState(query || '');
+// Filter posts
+const filteredPosts = filterPosts(tempCases, query);
+
   // Called eachtime page is rendered
-  /*useEffect(() => {
-    getCases()
-    
-  }, [])*/
+  useEffect(() => {
+    // Populate temp cases variable with imported objects
+    let importedObjects = []
+    importedObjects = importedObjects.concat(susD, missP, manslaughter)
+    setTempCases(importedObjects)
+    console.log(susD)
+  }, [])
 
   // to pass arguments to function called with onClick it needs to be in an
   // arrow function first, else you dont such as with createUser
@@ -105,14 +130,20 @@ function App() {
         <button onClick={createUser}>Create Story</button>
       </div> */}
       <Toggler/>
-      {cases.map((newCase) => {
+      {/* Search  */}
+      <Search
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+            />
+      
+      {filteredPosts.map((newCase) => {
         return (
           <div>
-            <h1>Name: {newCase.title}</h1>
-            <h1>Story: {newCase.story}</h1>
-            <h1>Date: {newCase.date}</h1>
-            <button onClick={() => { updateDate(newCase.id, newCase.date) }}>Adjust date</button>
-            <button onClick={() => { deleteUser(newCase.id) }}>Delete data </button>
+            <h1>Name: {newCase['Name']}</h1>
+            <h1>Story: {newCase['Offense']}</h1>
+            <h1>Date: {newCase['Date']}</h1>
+            {/* <button onClick={() => { updateDate(newCase.id, newCase.date) }}>Adjust date</button>
+            <button onClick={() => { deleteUser(newCase.id) }}>Delete data </button> */}
 
           </div>
         )

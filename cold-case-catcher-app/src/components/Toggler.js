@@ -72,7 +72,7 @@ const Toggler = () => {
     const filterCases = async(crime) =>{
       setCases(cases.filter((theCase)=>theCase['Offense'] !== crime))
     }
-  
+    // data["items"][0]["link"]
     return (
       // we create input fields that concurrently update the state variables
       // we have a button to post our most recent states to our database
