@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "googleapis": "^99.0.0"
+    "googleapis": "^99.0.0",
+    "react-firebase-hooks": "^5.0.3",
+    "react-router-dom": "^6.3.0"
   }
 }

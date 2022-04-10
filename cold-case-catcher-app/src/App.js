@@ -1,14 +1,12 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { db, signInWithGoogle, signOutOut } from "./firebase";
+import { db } from "./firebase";
 import { collection, doc, query, where, getDocs, addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
-import { Signup } from "./components/Signup"
-import { Login } from "./components/Login"
-import { Container } from 'react-bootstrap';
-import { AuthProvider } from "./components/AuthContext"
-//import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-//import {manslaughter} from './data/manslaughter.js'
-//import {murder} from './data/murder'
+import { Login } from "./components/Login/Login";
+import { Register } from './components/Register/Register';
+import { Reset } from './components/Reset/Reset';
+import { Dashboard } from './components/Dashboard/Dashboard';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Toggler from './components/Toggler';
 import Webscraper from './components/Webscraper';
 import NotebookPackage from './components/NotebookPackage';
@@ -63,11 +61,9 @@ function App() {
   // to pass arguments to function called with onClick it needs to be in an
   // arrow function first, else you dont such as with createUser
 
-  //disabled sign in with google button:
-  /*html code to create a disabled "Sign in with Google" button
-    <button type="button" class="login-with-google-btn" disabled>
-    Sign in with Google
-    </button>
+  /*<button onClick={signInWithGoogle} type="button" className="login-with-google-btn" >
+  Sign in with Google
+  </button>
   */
 
   return (
@@ -75,25 +71,15 @@ function App() {
     // we have a button to post our most recent states to our database
     <div className="App">
 
-      <button onClick={signInWithGoogle} type="button" className="login-with-google-btn" >
-      Sign in with Google
-      </button>
-
-      <button onClick={signOutOut} type="button">
-      Sign out
-      </button>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Login/>} />
+          <Route exact path="/register" element={<Register/>} />
+          <Route exact path="/reset" element={<Reset/>} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </Router>
       
-      <AuthProvider>
-        <Container className="d-flex allign-items-center justify-content-center"
-          style={{ minHeight: '100vh' }}>
-          <div className='w-100' style = {{ maxWidth: '400px' }}>
-            <Signup />
-            <Login />
-          </div>
-        </Container>
-      </AuthProvider>
-      
-
       <h1>Hello</h1>
 
       <Webscraper/>

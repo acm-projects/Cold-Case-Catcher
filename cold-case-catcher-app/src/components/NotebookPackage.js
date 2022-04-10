@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore'
 import Navbar from './Navbar';
-import NoteAdd from './/NoteAdd';
+import NoteAdd from './NoteAdd';
 import Notebook from "./Notebook";
 
 

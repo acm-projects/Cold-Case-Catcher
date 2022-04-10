@@ -20,14 +20,6 @@ const NoteAdd = () => {
   const addNote = () => {
     if (title !== "" && description !== "") {
       addDoc(notebookCollectionRef, { title: title, description: description })
-      /*const createUser = async () => {
-        await addDoc(notebookCollectionRef, { title: title, description: description }): newDate, story: newStory, title: newTitle })
-    
-      }
-      firebase.database().ref("notebook").push({
-        title: title,
-        description: description,
-      });*/
     }
   };
 
