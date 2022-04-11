@@ -73,10 +73,10 @@ function App() {
 
       <Router>
         <Routes>
-          <Route exact path="/" element={<Login/>} />
           <Route exact path="/register" element={<Register/>} />
           <Route exact path="/reset" element={<Reset/>} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard/:uid" element={<Dashboard />} />
+          <Route  path="/" element={<Login/>} />
         </Routes>
       </Router>
       
@@ -93,7 +93,7 @@ function App() {
         <button onClick={createUser}>Create Story</button>
       </div> */}
       <Toggler/>
-      {cases.map((newCase) => {
+      {/* {cases.map((newCase) => {
         return (
           <div>
             <h1>Name: {newCase.title}</h1>
@@ -104,7 +104,7 @@ function App() {
 
           </div>
         )
-      })}
+      })} */}
 
     </div>
   );
