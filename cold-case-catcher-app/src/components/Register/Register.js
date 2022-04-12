@@ -19,7 +19,7 @@ export const Register = () => {
 
   useEffect(() => {
     if (loading) return;
-    if (user) history("/dashboard");
+    if (user) history(`/dashboard/${user?.uid}`);
   }, [user, loading]);
 
   return (
@@ -30,7 +30,7 @@ export const Register = () => {
           className="register__textBox"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Full Name"
+          placeholder="Username"
         />
         <input
           type="text"

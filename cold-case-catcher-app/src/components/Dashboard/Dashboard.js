@@ -29,6 +29,7 @@ export const Dashboard = () => {
       alert("An error occured while fetching user data");
     }
   };
+
   // Get cases
   const getCases = async () => {
     const q = query(casesCollectionRef, where("Offense","==",`Hit and Run`))
@@ -36,12 +37,17 @@ export const Dashboard = () => {
     setCases(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   }
 
+  /*
+  * Note: singleUserID is the id of the document. We need it to write/read
+          back to the databse for that specific user. Attained in getUsers()
+  */
   const handleFollow = async (caseID) => {
     console.log(caseID)
     console.log(user?.id)
 
     let currCases = followedCases
     if (currCases.includes(caseID)) {
+      // filter from the state variable
       setFollowing(followedCases.filter(fCase => {
         return (
           fCase != caseID
@@ -65,19 +71,20 @@ export const Dashboard = () => {
 
     else {
       setFollowing([...followedCases, caseID])
+
+      // query for that document w/ user uid field
       const q = query(userCollectionRef, where("uid", "==", `${user.uid}`))
       const data = await getDocs(q)
       // get contents
       let returnedCases = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      // append contents to our array
+      //  extract following array & append contents to our array 
       let followingArr = returnedCases[0]['following']
       followingArr = [...followingArr, caseID]
+      // create new object field with updated array
       let newField = { following: followingArr }
-
-
+      
       // update firebase following
       const userDoc = doc(db, "users", singleUserID)
-
       updateDoc(userDoc, newField)
       console.log(followingArr)
     }
@@ -88,6 +95,7 @@ export const Dashboard = () => {
     // Try to get the specific document ID of the signed in person
     const data = await getDocs(userCollectionRef)
     let tempUsers = (data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+
     let tempUser = tempUsers.filter(theUser => theUser.uid == user?.uid)
     setUsers(tempUser[0]['id'])
     console.log(tempUser[0]['id'])
@@ -127,6 +135,7 @@ export const Dashboard = () => {
         </div>
 
         <button onClick={() => {
+          // checks if we are toggling the followed cases
           if (followState === false) {
             setFollowState(true)
             displayFollowing()
@@ -139,6 +148,7 @@ export const Dashboard = () => {
       </div>
 
       {followedCases.map((fCase) => {
+        // maps the followed cases
         return (
           <div>
             <h1>SALMAN</h1>
