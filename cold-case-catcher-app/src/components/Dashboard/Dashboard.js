@@ -4,13 +4,14 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 import { auth, db, logout } from "../../firebase";
-import { doc, query, collection, getDocs, where, updateDoc } from "firebase/firestore";
-
+import { doc, query, collection, getDocs, where, updateDoc, getDoc } from "firebase/firestore";
+import CommentBox from "../CommentBox";
 export const Dashboard = () => {
 
   const [user, loading, error] = useAuthState(auth);
   const [singleUserID, setUsers] = useState("")
   const [name, setName] = useState("");
+  const [comm, setCom] = useState("")
   const [cases, setCases] = useState([]);
   const [followState, setFollowState] = useState(false)
   const [followedCases, setFollowing] = useState([]);
@@ -32,7 +33,7 @@ export const Dashboard = () => {
 
   // Get cases
   const getCases = async () => {
-    const q = query(casesCollectionRef, where("Offense","==",`Hit and Run`))
+    const q = query(casesCollectionRef, where("Offense", "==", `Hit and Run`))
     const data = await getDocs(q)
     setCases(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
   }
@@ -82,7 +83,7 @@ export const Dashboard = () => {
       followingArr = [...followingArr, caseID]
       // create new object field with updated array
       let newField = { following: followingArr }
-      
+
       // update firebase following
       const userDoc = doc(db, "users", singleUserID)
       updateDoc(userDoc, newField)
@@ -113,6 +114,27 @@ export const Dashboard = () => {
     // sets our following state variable to the returned items 
     setFollowing(followingArr)
   }
+
+  // Method to add comment 
+  const addComment = async (caseID)=>{
+
+    console.log(comm)
+    console.log(user?.name)
+    // creates new comment
+    let newComment = {comment: comm, username: name, timestamp: new Date().toLocaleString()}
+    console.log(caseID)
+    // gets that case whose caseID was passed in the arg
+    const docRef = doc(db, "cases", caseID)
+    // gets the that case from firebase
+    const data = await getDoc(docRef)
+    // assigns that cases comments to a variable called comments
+    let comments = data.data()['comments']
+    let newCommentField = [...comments, newComment]
+    const newField = {comments: newCommentField}
+    // update doc
+    updateDoc(docRef, newField)
+    console.log(newCommentField)
+}
   useEffect(() => {
     if (loading) return;
     if (!user) return navigate("/");
@@ -154,6 +176,7 @@ export const Dashboard = () => {
             <h1>SALMAN</h1>
             <h1>Following Case ID: {fCase}</h1>
             <button onClick={() => { handleFollow(fCase) }}> follow </button>
+
           </div>
         )
       })}
@@ -167,6 +190,18 @@ export const Dashboard = () => {
 
             <button onClick={() => { handleFollow(newCase.id) }}> follow </button>
 
+            <div>
+            {newCase['comments'].map((commData) => {
+              return (
+                <CommentBox caseID={newCase['id']} commentData={commData}/>
+              )
+            })}
+            {/* Button to post comment */}
+            <div>
+                <input type="text" placeholder="Type your comment here" onChange={(e) => { setCom(e.target.value) }}></input>
+                <button onClick={()=>{addComment(newCase.id)}}> Post Comment</button>
+            </div>
+            </div>
           </div>
         )
       })}

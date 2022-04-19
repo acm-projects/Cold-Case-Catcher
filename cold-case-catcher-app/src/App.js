@@ -45,17 +45,24 @@ function App() {
   }
 
   // Updates data with doc id & the fields you want to be updated with the updateDoc method
-  const updateDate = async (id, date) => {
+  const updateCom = async (id, cmtArr) => {
     // We need to update a specific doc so we need to 
     // grab that doc from our DB, its collection, & filtered with the 'id' var
     const userDoc = doc(db, "cases", id)
-    const newFields = { date: "updated date" }
+    const newFields = { comments: cmtArr }
     updateDoc(userDoc, newFields)
   }
 
   // Called eachtime page is rendered
   useEffect(() => {
-    //getCases()
+    // getCases()
+    // let newComment = {comment:"this is absurd", username:"salmanh", timestamp: new Date().toLocaleString()}
+    // let cmtArr = [newComment]
+    // //console.log(cmtArr)
+    // cases.forEach((speCase)=>{
+    //   updateCom(speCase['id'], cmtArr)
+    // })
+    
   }, [])
 
   // to pass arguments to function called with onClick it needs to be in an
@@ -93,18 +100,18 @@ function App() {
         <button onClick={createUser}>Create Story</button>
       </div> */}
       <Toggler/>
-      {/* {cases.map((newCase) => {
+      {cases.map((newCase) => {
         return (
           <div>
-            <h1>Name: {newCase.title}</h1>
-            <h1>Story: {newCase.story}</h1>
-            <h1>Date: {newCase.date}</h1>
+            <h1>Name: {newCase['Name']}</h1>
+            <h1>Story: {newCase['id']}</h1>
+            {/* <h1>Date: {newCase.date}</h1>
             <button onClick={() => { updateDate(newCase.id, newCase.date) }}>Adjust date</button>
-            <button onClick={() => { deleteUser(newCase.id) }}>Delete data </button>
+            <button onClick={() => { deleteUser(newCase.id) }}>Delete data </button> */}
 
           </div>
         )
-      })} */}
+      })}
 
     </div>
   );

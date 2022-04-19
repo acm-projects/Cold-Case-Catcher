@@ -1,0 +1,8 @@
+.case-div{
+    border: 1px solid black;
+    padding:20px;
+    text-align: left;
+    display:flex;
+    margin: auto;
+    margin-top: 20px;
+  }
