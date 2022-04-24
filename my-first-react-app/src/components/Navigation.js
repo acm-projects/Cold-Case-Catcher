@@ -17,14 +17,14 @@ function Navigation() {
     <NavigationStyled>
             <ul>
                 <li>
-                    <a className='opts' href=''>Home </a>
+                    <a className='opts' href=''></a>
                 </li>
             </ul>
         
         
             <ul className='list-buttons'>
                 <li>
-                    <Link to="/signup">
+                    <Link to="/register">
                         <PrimaryButton name='Sign Up'></PrimaryButton>
                     </Link>
                 </li>

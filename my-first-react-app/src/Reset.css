@@ -1,0 +1,38 @@
+.reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+  }
+  .reset-title {
+    font: 'Lato', sans-serif;
+    font-size: 64px;
+    color: white;
+  }
+  .reset__container {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-left: 18rem;
+    margin-bottom: 10rem;
+  }
+  .reset__textBox {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .reset__btn {
+    background-color: var(--white);
+    padding: 0.75rem 0.75rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+  }
+  .reset div {
+    margin-top: 7px;
+  }
+
+  .fix-btns{
+    
+    margin-left: 14rem;
+  }

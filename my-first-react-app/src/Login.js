@@ -1,139 +1,80 @@
-import React, { useRef, useState } from 'react'
-import styled from 'styled-components'
-import Options from './components/Options';
-import GlobalStyle from './GlobalStyle'
-import { InnerLayout } from './styles/Layouts';
-import { useAuth } from './AuthContext'
-import PrimaryButton from './components/PrimaryButton';
-import { Link } from 'react-router-dom';
-import { Form, Button, Card, Alert } from 'react-bootstrap'
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import "./Login.css";
+import GlobalStyle from "./GlobalStyle";
+import { InnerLayout, OuterLayout } from './styles/Layouts'
 
-function Login() {
-  const emailRef = useRef()
-  const passwordRef = useRef()
-  const signup = useAuth()
-  const [error, setError] = useState("")
-  const [loading, setLoading] = useState(false)
+export const Login = () => {
 
-  async function handleSubmit(e) {
-      e.preventDefault()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
 
-      try {
-          setError("")
-          setLoading(true)
-          await signup(emailRef.current.value, passwordRef.current.value)
-      }
-      catch(error) {
-          console.log(error)
-          setError("Failed to create an account")
-      }
-      setLoading(false)
+  useEffect(() => {
+    if (loading) {
+      // maybe trigger a loading screen
+      return;
+    }
+    if (user) navigate("/home");
+  }, [user, loading]);
 
-  }
+  
   return (
-    <LoginStyled>
-      <GlobalStyle />
-      <InnerLayout>
-      <ul className='login-page'>
-        <li>
-          <Card className='login-field'>
-            <center>
-              <div className='title'> Welcome to </div> <div className='title'> Cold Case Catcher </div>
-              <br />
-              <Card.Body>
-                  <h2 className='text-center mb-4'></h2>
-                  {error && <Alert variant="danger">{error}</Alert>}
-                  <Form onSubmit={handleSubmit}>
-                      <Form.Group id='email'>
-                          <Form.Control className='input' placeholder='Email' type='email' ref={emailRef} required />
-                          </Form.Group>
-                          <br />
-                      <Form.Group id='password'>
-                          <Form.Control className='input' placeholder='Password' type='password' ref={passwordRef} required />
-                          </Form.Group>
-                          <br />
-                      <h1></h1>
-                      <Button disabled={loading} className = 'w-100' type='submit'>
-                          Log In
-                      </Button>
-                  </Form>
-              </Card.Body>
-            </center>
-          </Card>
+    <>
+    <GlobalStyle />
+    <OuterLayout>
+    <ul className="login">
+      <li>
+      <div className='login-page-title'>Welcome to Cold Case Catcher</div>
+        <div className="login__container">
+          <div className="login-field">
+            <input
+              type="text"
+              className="login__textBox"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="E-mail Address"
+            /><br /><br />
+            <input
+              type="password"
+              className="login__textBox"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+            /><br /><br />
+          </div>
+          <center className='display-btns'>
+            <div className="org-btns">
+            <button
+              className="login__btn"
+              onClick={() => logInWithEmailAndPassword(email, password)}
+            >
+              Login
+            </button>
+            </div>
+            <button className="login__google" onClick={signInWithGoogle}>
+              Login with Google
+            </button>
+            <div>
+              <Link to="/reset" className="change-color">Forgot Password?</Link>
+            </div></center>
+        </div>
         </li>
 
-        <li><Card className='vl'></Card></li>
-
-        <li>
-          <Card className='options-box'>
-            <center>
-            <center className='text'>Don't have an account?</center>
-            <br />
-              <Link to="/signup">
-                <PrimaryButton name='Sign Up'></PrimaryButton>
-              </Link>
-            </center>
-          </Card>
-        </li>
+        <li><div className="vl"></div></li>
         
-      </ul>
-      </InnerLayout>
-    </LoginStyled>
-  )
+        <li>
+          <div className="register_link">
+            Don't have an account? <Link to="/register" className="change-color">Register</Link> now.
+          </div>
+        </li>
+    </ul>
+    </OuterLayout>
+    </>
+  );
 }
 
-const LoginStyled = styled.header`
-  .login-page {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    height: 200px;
-    position: absolute;
-    top: 20%;
-  }
-
-  .login-field {
-      margin: 0;
-      position: relative;
-      top: 10%;
-      -ms-transform: translateX(10%);
-      transform: translateX(10%);
-  }
-
-  .title {
-    font: 'Lato', sans-serif;
-    font-size: 64px;
-    color: white;
-    padding: 0rem 5rem;
-  }
-
-  .input {
-    height: 30px;
-    font-size: 16pt;
-    border-radius: 10px;
-  }
-
-  .w-100 {
-    background-color: var(--white);
-    padding: 0.75rem 0.75rem;
-    font-family: 'Lato', sans-serif;
-    font-size: 12px;
-    border-radius: 10px;
-  }
-
-  .vl {
-    border-left: 1px solid gray;
-    height: 500px;
-    position: relative;
-    transform: translate(-50%, -15%);
-  }
-
-  .options-box {
-    transform: translateY(100%);
-    .text {
-      color: white;
-    }
-  }
-`;
-
-export default Login
+export default Login;

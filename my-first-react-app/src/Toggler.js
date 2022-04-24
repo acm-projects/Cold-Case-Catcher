@@ -1,6 +1,6 @@
-import '../App.css';
+import './App.css';
 import { useState, useEffect } from 'react';
-import { db } from '../firebase';
+import { db } from './firebase';
 import { collection, doc, query, where, getDocs,  addDoc, updateDoc, deleteDoc } from 'firebase/firestore'
 const Toggler = () => {
 
@@ -21,11 +21,11 @@ const Toggler = () => {
     const casesCollectionRef = collection(db, "cases") // establish connection to db & collection
   
     // Retrieves cases with getDocs & our collection reference
-    const getCases = async (crime = "Hit and Run") => {
-      const q = query(casesCollectionRef, where("Offense","==",`${crime}`))
-      const data = await getDocs(q)
-      setCases(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
-    }
+    // const getCases = async (crime = "Hit and Run") => {
+    //   const q = query(casesCollectionRef, where("Offense","==",`${crime}`))
+    //   const data = await getDocs(q)
+    //   setCases(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    // }
   
     // Creating a user involves adjusting the entire collection so we need the collection reference
     // & we need the new document to be posted.

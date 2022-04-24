@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Header from './components/Header';
+import Header from './components/LandingPageHeader';
 import GlobalStyle from './GlobalStyle';
 import {InnerLayout, NavigationLayout, OuterLayout} from './styles/Layouts'
 import Navigation from './components/Navigation';
@@ -11,6 +11,7 @@ import Purpose from './components/Purpose';
 import Options from './components/Options';
 import LandingPage from './LandingPage';
 import Login from './Login';
+import Home from './Home';
 
 ReactDOM.render(
   <React.StrictMode>

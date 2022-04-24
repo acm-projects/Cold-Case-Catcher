@@ -20,7 +20,7 @@ const ButtonStyled = styled.button`
         --altblue: rgb(115,180,235);
     }
   
-  background-color: var(--altblue);
+  background-color: #4285f4;
   padding: 0.75rem 0.75rem;
   font-family: 'Lato', sans-serif;
   font-size: 12px;

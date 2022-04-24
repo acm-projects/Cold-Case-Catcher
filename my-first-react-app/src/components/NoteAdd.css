@@ -1,0 +1,91 @@
+.noteadd {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px auto;
+  }
+  .noteadd h1 {
+    display: flex;
+    background: rgba(255, 255, 255, 0.15);
+    justify-content: center;
+    align-items: center;
+    color: #8661d1;
+    font-family: "poppins";
+    margin-bottom: 10px;
+  }
+  
+  .noteadd-header {
+    border-style: none;
+    background: transparent;
+    outline: none;
+  }
+  
+  textarea {
+    border-style: none;
+    background: transparent;
+    outline: none;
+  }
+  
+  .noteadd-header {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    height: 10px;
+    margin-left: -95px;
+    border-radius: 5px;
+    padding: 1rem;
+    background: transparent;
+    color: white;
+  }
+  
+  .noteadd-header input {
+    flex-grow: 1;
+    color: white;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin-left: 10rem;
+    background: transparent;
+    outline: none;
+  }
+  
+  .noteadd-description {
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    max-height: 200px;
+    height: 600px;
+    margin-left: -95px;
+    color: white;
+    border-radius: 5px;
+    padding: 1rem;
+    background: transparent;
+  }
+
+  .noteadd-header textarea {
+    flex-grow: 1;
+    color: white;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+  }
+  
+  .noteadd .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+  
+  .style-btn {
+    background-color: transparent;
+    border: none;
+    margin-left: -5rem;
+  }

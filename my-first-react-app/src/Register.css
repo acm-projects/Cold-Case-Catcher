@@ -1,0 +1,44 @@
+.register {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+  .input_container {
+    margin-right: 48rem;
+  }
+
+  .register__container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+  .register__textBox {
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .register__btn {
+  background-color: var(--white);
+  padding: 0.75rem 0.75rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  border-radius: 10px;
+  }
+
+  .register__google {
+    padding: 0.75rem 0.75rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: #4285f4;
+  }
+  .register div {
+    margin-top: 7px;
+    white-space: nowrap;
+  }
+
+  .change-color {
+    color: white;
+  }

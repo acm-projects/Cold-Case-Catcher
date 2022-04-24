@@ -1,0 +1,273 @@
+.background-container{
+    position: absolute;
+width: 250px;
+height: 480px;
+left: 1120px;
+top: 255px;
+
+background: linear-gradient(152.97deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+border: 1px solid rgba(255, 255, 255, 0.6);
+backdrop-filter: blur(42px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 16px;
+}
+
+
+.title{
+position: absolute;
+
+margin-top: 2rem;
+margin-inline-start: 5.5rem;
+
+
+font-family: 'Lato';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 29px;
+
+letter-spacing: 0.15em;
+
+color: #FFFFFF;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.line{
+position: absolute;
+width: 189px;
+height: 0px;
+
+
+margin-inline-start: 1.5rem;
+top: 75px;
+
+border: 1px solid #FFFFFF;
+}
+
+
+.murder:hover {
+    width: 6rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+
+.murder{
+    transform: translate(4.5rem , 0rem);
+
+   
+    margin-top: 6rem;
+    margin-right: 4rem;
+    right: 4rem;
+    
+    width: 6rem;
+    height: 2rem;
+    
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+}
+
+.manslaughter{
+
+    transform: translate(-3rem , 1rem);
+
+    margin-top: 0.5rem;
+
+
+    width: 9rem;
+    height: 2rem;
+    
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+}
+
+.manslaughter:hover {
+    width: 9rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+.hit-run{
+
+    transform: translate(4.5rem , 11.5rem);
+   
+    width: 6rem;
+    height: 2rem;
+    
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+}
+
+.hit-run:hover {
+    width: 6rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+.hit-run:active {
+    width: 6rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+
+
+.missPer{
+
+    transform: translate(3rem , 2rem);
+
+    margin-top: .5rem;
+    width: 9rem;
+    height: 2rem;
+    
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+}
+
+.missPer:hover {
+    width: 9rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+.susDeath{
+
+    transform: translate(2.5rem , 3rem);
+
+    margin-top: .5rem;
+    margin-right: 10rem;
+    width: 10rem;
+    height: 2rem;
+    
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+}
+
+.susDeath:hover {
+    width: 10rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+.following{
+    transform: translate(3.5rem , 7.5rem);
+
+    margin-top: 0.5rem;
+    margin-right: 10rem;
+    width: 8rem;
+    height: 2rem;
+    
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+
+}
+
+.following:hover{
+    width: 8rem;
+    height: 2rem;
+    background: #A1C2D7;
+}
+
+.none {
+
+    transform: translate(4.5rem , 9rem);
+   
+    width: 6rem;
+    height: 2rem;
+
+    background: #d8d8d8;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+}
+
+.none:hover {
+    width: 6rem;
+    height: 2rem;
+    background: #A1C2D7;
+}

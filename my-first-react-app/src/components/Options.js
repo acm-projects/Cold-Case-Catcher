@@ -9,12 +9,12 @@ function Options() {
     <OptionsStyled>
         <div className='options-box'>
             <center>
-                <div className='title'>WANT TO SEE MORE?</div>
+                <h1>Want to see more?</h1>
                 <br />
                 <div className='subtext'>Log in or create an account to access the nation's top unsolved cases</div>
                 <br />
                 <ul className='list-buttons'>
-                    <Link to="/signup">
+                    <Link to="/register">
                         <PrimaryButton name='Sign Up'></PrimaryButton>
                     </Link>
                     <br /><br />

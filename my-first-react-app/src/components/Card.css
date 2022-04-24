@@ -1,0 +1,250 @@
+.parent-contain{
+
+   margin-top: 1rem;
+   margin-left: 14rem;
+
+   width: 49rem;
+   height: 34.5rem;
+
+
+   overflow: scroll;
+   scroll-behavior: smooth;
+
+   
+}
+
+
+.card-container{
+    margin-left: .5rem;
+    margin-top: 0rem;
+
+    width: 47rem;
+    height: 18rem;
+   
+    padding: 16px 8px 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+
+    background: linear-gradient(288.11deg, rgba(255, 255, 255, 0.2) 23.19%, rgba(255, 255, 255, 0) 97.31%);
+    backdrop-filter: blur(42px);
+
+    
+    border-radius: 16px;
+
+    overflow: hidden;
+
+}
+
+.card-container2{
+    margin-left: .5rem;
+    margin-top: 2rem;
+    width: 47rem;
+    height: 18rem;
+   
+    padding: 16px 8px 8px 16px;
+    
+
+    background: linear-gradient(334.38deg, rgba(255, 255, 255, 0.2) 4.23%, rgba(255, 255, 255, 0) 102.06%);;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(42px);
+    
+    
+    border-radius: 16px;
+
+    overflow: hidden;
+}
+
+.tag-sus-card{
+    margin-top: 6.5rem;
+    margin-left: 18rem;
+    width: 10rem;
+    height: 2rem;
+    
+    background: #A1C2D7;
+        border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+    text-align: center;
+    padding-top: .5rem;
+}
+
+.murder-tag-card{
+
+    margin-top: 6.5rem;
+    margin-left: 18rem;
+    
+    
+    width: 6rem;
+    height: 2rem;
+    
+    background: #A1C2D7;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+    text-align: center;
+    padding-top: .5rem;
+}
+
+.following-tag-card{
+    margin-top: -2rem;
+    margin-left: 25rem;
+    
+    
+    width: 7rem;
+    height: 2rem;
+    
+    background: #A1C2D7;
+        border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+  
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.15em;
+    
+    color: #000000;
+    text-align: center;
+    padding-top: .5rem;
+
+}
+
+
+
+.image-container{
+    margin-top: .5rem;
+    margin-left: .5rem;
+    width: 15rem;
+    height: 15rem;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+
+    background-position: 0%;
+    background-repeat: no-repeat;
+    image-rendering: optimizeQuality;
+
+}
+
+/*
+.photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    image-rendering: optimizeQuality;
+}
+*/
+
+
+
+.title-text{
+    margin-right: -11rem;
+    margin-top: -15rem;
+
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    
+
+    text-align: center;
+    letter-spacing: 0.15em;
+
+    text-decoration-line: underline;
+    color: #FFFFFF;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+
+.body-text{
+
+    width: 20rem;
+    margin-inline-start: 18.2rem;
+    margin-block-start: 1rem;
+
+
+
+
+    position: absolute;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+
+}
+
+
+
+
+.circle-border{
+    margin-left: 40rem;
+    margin-top: -2rem;
+
+    display: flex;
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+  
+    
+
+}
+
+.rank-text{
+
+
+    font-family: 'Roboto Slab';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+
+    margin: auto;
+
+
+    color: #FFFFFF;
+}
+
+.bookmark{
+    margin-left: 40.5rem;
+    margin-top: 1rem;
+
+
+}

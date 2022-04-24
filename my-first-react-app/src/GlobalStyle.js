@@ -11,7 +11,6 @@ const globalStyle = createGlobalStyle`
         --white: rgb(255, 255, 255);
         --altblue: rgb(115,180,235);
     }
-
     *{
         margin: 0;
         padding: 0;
@@ -20,18 +19,15 @@ const globalStyle = createGlobalStyle`
         font-family: 'Roboto Condensed', sans-serif;
         text-decoration: none;
     }
-
     body {
         background: url(${bg}) no-repeat center fixed;
         background-size: cover;
     }
-
     a {
         font-family: 'Lato', sans-serif;
         color: var(--blue);
         font-size: 20px;
     }
-
 `; 
 
 export default globalStyle;

@@ -6,17 +6,17 @@ function Purpose() {
     <PurposeStyled>
         <div className='center'>
             <div className='about-us'>
-                <h1>So, who are we?</h1>
+                <h1 className="change-color">Why did we build this?</h1>
                 <p></p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat...
+                Did you know that 40% of homicide cases go unsolved? This is largely due to the fact that it is difficult for the general public to get involved with a case. We built this app to help the public gain more knowledge of unsolved cases nationwide and give them a means to share their knowledge.  
                 <p></p>
 
                 <hr></hr>
 
                 <p></p>
-                <h1>Our Purpose</h1>
+                <h1 className='change-color'>Our Purpose</h1>
                 <p></p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat...
+                Countless criminal cases go unsolved every year. This web app aims to get the general public involved in investigations by pooling resources and helping find vital information to solve cold cases across the country. 
             </div>
 
             <br /><br /><br /><br /><br /><br /><br /><br />

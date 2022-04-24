@@ -1,0 +1,64 @@
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+  }
+  .login-page-title {
+    font: 'Lato', sans-serif;
+    font-size: 64px;
+    color: white;
+    margin-left: -5rem;
+  }
+  .login__container {
+    display: flex;
+    flex-direction: column;
+    margin-left: -5rem;
+    margin-bottom: 5rem;
+  }
+  .login__textBox {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .login__btn {
+    background-color: var(--white);
+  padding: 0.75rem 0.75rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  border-radius: 10px;
+  }
+  .login__google {
+    padding: 0.75rem 0.75rem;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: #4285f4;
+  }
+  .login div {
+    margin-top: 7px;
+  }
+
+  .vl {
+    border-left: 1px solid gray;
+    height: 500px;
+    transform: translate(-50%, -15%);
+    margin-left: 5rem;
+  }
+  
+  .display-btns {
+    margin-bottom: 10px;
+  }
+
+  .register_link {
+    color: black;
+    margin-bottom: 18rem;
+    margin-left: 3rem;
+  }
+
+  .change-color {
+    color: white;
+  }
+
+  .org-btns {
+    display: block;
+  }

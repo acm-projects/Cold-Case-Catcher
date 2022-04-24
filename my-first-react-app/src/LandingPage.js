@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Header from './components/Header';
+import LandingPageHeader from './components/LandingPageHeader';
 import GlobalStyle from './GlobalStyle';
 import {InnerLayout, NavigationLayout, OuterLayout} from './styles/Layouts'
 import Navigation from './components/Navigation';
@@ -20,7 +20,7 @@ function LandingPage() {
     </NavigationLayout>
 
     <InnerLayout>
-      <Header />
+      <LandingPageHeader />
       <Purpose />
     </InnerLayout>
 
