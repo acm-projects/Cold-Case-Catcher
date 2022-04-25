@@ -368,7 +368,7 @@ function Home() {
                     setNoneState(false)
                     }
                   }}>
-                        NONE
+                        CLEAR
                   </button>
 
             </div>

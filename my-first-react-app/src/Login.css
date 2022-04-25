@@ -62,3 +62,9 @@
   .org-btns {
     display: block;
   }
+
+  .register_link2{
+    color: white;
+    margin-left: 4rem;
+    margin-bottom: 11rem;
+  }

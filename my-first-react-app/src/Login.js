@@ -67,7 +67,7 @@ export const Login = () => {
         <li><div className="vl"></div></li>
         
         <li>
-          <div className="register_link">
+          <div className="register_link2">
             Don't have an account? <Link to="/register" className="change-color">Register</Link> now.
           </div>
         </li>

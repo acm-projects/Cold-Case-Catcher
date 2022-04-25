@@ -21,6 +21,7 @@ const globalStyle = createGlobalStyle`
     }
     body {
         background: url(${bg}) no-repeat center fixed;
+        background-color: black;
         background-size: cover;
     }
     a {

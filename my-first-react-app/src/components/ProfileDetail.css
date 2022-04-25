@@ -50,7 +50,7 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 .profile-name{
 
-    margin-left: 8rem;
+    margin-left: 6rem;
     margin-top: 1rem;
     font-family: 'Lato';
     font-style: normal;
@@ -90,5 +90,5 @@ transform: rotate(-90deg);
 }
 
 .style-logout {
-    margin-left: -2rem; 
+    margin-left: 0rem; 
 }

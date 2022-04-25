@@ -39,6 +39,13 @@ function SavedNote({note}) {
            <div className='small-case-description1'> Case unsolved for 40+ years, possible that the culprit is dead? </div>
            <button className="edit-and-delete-icons"><img src={Delete}/></button>
         </div>
+
+        <div className='mini-notebook-card2'>
+           <div className='notebook-mini-title2'>  NOTE #4:</div>
+           <div className='small-case-title-text2'> HIT&RUN of TEMOC </div>
+           <div className='small-case-description1'> TEMOC was run over at Waterview?? Sounds very sus. </div>
+           <button className="edit-and-delete-icons"><img src={Delete}/></button>
+        </div>
     </>
   )
 }

@@ -63,7 +63,7 @@ export const Register = () => {
         >
           Register with Google
         </button></Link>
-        <div>
+        <div className="change-color2">
           Already have an account? <Link to="/login" className="change-color">Login</Link> now.
         </div>
       </div>
