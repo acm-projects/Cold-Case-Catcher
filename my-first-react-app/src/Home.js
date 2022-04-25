@@ -228,6 +228,16 @@ function Home() {
       <Header />
       <Searchbar searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>
       <div className="parent-contain">
+        {hitRunCases.map((newCase) => {
+          if (followState && newCase?.["Name"] == "Temoc") return (
+            <div>
+                  <Link to='/casepage' state={newCase}>
+                    {console.log(newCase?.id)}
+                    <Card cardProp={newCase} num={++ctr} /> 
+                  </Link>
+            </div>
+          )
+        })}
         {
           hitRunCases.map((newCase) => {
             if((searchQuery=="" || newCase?.["Name"].toUpperCase().includes(searchQuery.toUpperCase())) && forDemo(newCase, hitRunCases) && ctr<3 && hrctr<3 && (hitRunState || noneState)) return (
@@ -300,7 +310,13 @@ function Home() {
             </div>
 
         <div className="master-tags">
-                  <button className="murder" >
+                  <button className="murder" onClick={() => {
+                    if (followState === false) {
+                      setFollowState(true)
+                    } else {
+                      setFollowState(false)
+                    }
+                  }}>
                         FOLLOWING
                   </button>
 
