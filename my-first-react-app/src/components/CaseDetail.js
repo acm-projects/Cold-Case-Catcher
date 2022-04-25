@@ -174,11 +174,11 @@ function CaseDetail({caseId}) {
             
           
             <br/>
-            <div className='description-title'> STATUS:</div>
+            <div className='description-title'> CASE FILE:</div>
             <br/>
             <br/>
             <div className='txt-underline'>
-              {caseId?.Status}
+              {caseId?.["Name"] == "Temoc" ? <a className="temoc" href='https://twitter.com/Official_Temoc' target="_blank" > Temoc's Twitter </a> : "None"}
             </div>
 
             <br/> <br/>

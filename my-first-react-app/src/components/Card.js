@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './Card.css'
 import Graveyard from '../img/graveyard.jpeg'
-import SirEdward from '../img/sirEdwards.jpeg'
+import Temoc from '../img/temoc.jpeg'
 import Bookmark from '../img/bookmark.svg'
 import { doc, query, collection, getDocs, where, updateDoc } from "firebase/firestore";
 import { auth, db, logout } from "../firebase";
@@ -17,7 +17,7 @@ function Card({cardProp, num}) {
     <div className = 'card-container'>
 
         <div className = 'image-container'>
-         <img src={Graveyard} className = 'photo' alt = "Graveyard"/>
+         <img src={cardProp?.["Name"]=="Temoc" ? Temoc : Graveyard} className = 'photo' alt = "Graveyard"/>
         </div>
        
         <div className = 'title-text'>

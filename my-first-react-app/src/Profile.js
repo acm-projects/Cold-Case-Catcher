@@ -120,7 +120,7 @@ function Profile() {
   }
   useEffect(() => {
     if (loading) return;
-    if (!user) return navigate("/");
+    if (!user) return navigate("/login");
     fetchUserName();
     //getCases();
     getUsers();
