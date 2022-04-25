@@ -178,7 +178,7 @@ function CaseDetail({caseId}) {
             <br/>
             <br/>
             <div className='txt-underline'>
-              {caseId?.["Name"] == "Temoc" ? <a className="temoc" href='https://twitter.com/Official_Temoc' target="_blank" > Temoc's Twitter </a> : "None"}
+              {caseId?.["Name"] == "Temoc" ? <a className="temoc" href='https://twitter.com/Official_Temoc' target="_blank" > Temoc's Twitter </a> : <a className="temoc" href="https://www.doj.nh.gov/criminal/cold-case/victim-list/kathy-lynn-gloddy.htm" target="_blank">Link</a>}
             </div>
 
             <br/> <br/>

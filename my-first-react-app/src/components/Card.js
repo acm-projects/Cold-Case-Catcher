@@ -3,6 +3,10 @@ import './Card.css'
 import Graveyard from '../img/graveyard.jpeg'
 import Temoc from '../img/temoc.jpeg'
 import Bookmark from '../img/bookmark.svg'
+import Sire from '../img/sirEdwards.jpeg'
+import sus from '../img/suspicious.jpg'
+import crime from '../img/crimescene.jpg'
+import car from '../img/car.jpg'
 import { doc, query, collection, getDocs, where, updateDoc } from "firebase/firestore";
 import { auth, db, logout } from "../firebase";
 
@@ -17,7 +21,7 @@ function Card({cardProp, num}) {
     <div className = 'card-container'>
 
         <div className = 'image-container'>
-         <img src={cardProp?.["Name"]=="Temoc" ? Temoc : Graveyard} className = 'photo' alt = "Graveyard"/>
+         <img src={cardProp?.["Name"]=="Temoc" ? Temoc : cardProp?.["Offense"] == "Rape/Murder" ? Sire : cardProp?.["Offense"] == "Missing Person (Presumed Murdered)" ? Graveyard : cardProp?.["Offense"] == "Suspicious Death" ? sus : cardProp?.["Offense"] == "Manslaughter/ Non-Negligent" ? crime : car} className = 'photo' alt = "Graveyard"/>
         </div>
        
         <div className = 'title-text'>
